@@ -96,6 +96,12 @@ personal-dashboard/
 │   ├── github-trending-scraper.js # Trending repos
 │   ├── arxiv-scraper.js           # Research papers
 │   └── package.json               # Scraper dependencies
+├── .claude/
+│   ├── skills/            # Claude Code skills
+│   │   ├── playwright/    # Browser automation utilities
+│   │   ├── web-automation/# Advanced scraping examples
+│   │   └── port-proxy/    # Proxy configuration tools
+│   └── README.md          # Skills documentation
 ├── drops-output/          # Cached data (JSON files)
 ├── CLAUDE.md             # Interactive setup guide
 ├── README.md             # This file
@@ -339,6 +345,18 @@ See **CLAUDE.md** for an interactive guide that helps you:
 - Pick a theme that matches your style
 - Set up automated updates
 - Customize the dashboard to your needs
+
+## Claude Code Skills
+
+This project includes three [Claude Code](https://claude.com/claude-code) skills in the `.claude/skills/` directory:
+
+- **playwright** - Browser automation utilities and examples
+- **web-automation** - Advanced scraping patterns and the original example scrapers
+- **port-proxy** - Tools for fixing proxy-related routing issues
+
+If you're using Claude Code, you can invoke these skills to get help creating new scrapers, debugging issues, or extending functionality. See `.claude/README.md` for details.
+
+**Not using Claude Code?** No problem! The skills directory contains useful examples and utilities you can reference directly.
 
 ## Tech Stack
 
