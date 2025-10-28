@@ -1,0 +1,11 @@
+{
+  "name": "personal-dashboard-scrapers",
+  "version": "1.0.0",
+  "description": "Web scrapers for personal dashboard",
+  "scripts": {
+    "install-browser": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

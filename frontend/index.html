@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>web tracker</h1>
+      <span class="header-actions">
+        | <button id="refresh-btn">
+          <span class="btn-text">refresh</span>
+          <span class="loader" style="display: none;"></span>
+        </button>
+        <span id="last-updated" class="last-updated"></span>
+      </span>
+    </header>
+
+    <!-- Status Messages -->
+    <div id="status-message" class="status-message" style="display: none;"></div>
+
+    <!-- Loading State -->
+    <div id="initial-loader" class="initial-loader">
+      <div class="loader"></div>
+      <p>Loading drops data...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content" style="display: none;">
+
+      <!-- Hacker News Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2>Hacker News - Top Stories</h2>
+        </div>
+        <div id="hackernews-stories" class="hackernews-stories"></div>
+      </section>
+
+      <!-- GitHub Trending Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2>GitHub - Trending Repositories</h2>
+        </div>
+        <div id="github-repos" class="github-repos"></div>
+      </section>
+
+      <!-- arXiv Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2>arXiv - Recent CS Papers</h2>
+        </div>
+        <div id="arxiv-papers" class="arxiv-papers"></div>
+      </section>
+
+      <!-- Hypebeast Section -->
+      <section class="section">
+        <div class="section-header">
+          <h2>Hypebeast - Weekly Drops</h2>
+        </div>
+        <div id="hypebeast-article" class="hypebeast-article"></div>
+        <div id="hypebeast-drops" class="hypebeast-drops"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
