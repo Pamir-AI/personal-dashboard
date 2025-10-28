@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Session files
+*.json
+!package.json
+
+# Screenshots
+screenshots/
+*.png
+
+# Environment variables
+.env
+
+# Playwright cache
+.cache/

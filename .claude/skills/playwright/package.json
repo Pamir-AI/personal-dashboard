@@ -1,0 +1,29 @@
+{
+  "name": "playwright-skill",
+  "version": "1.0.0",
+  "description": "General-purpose browser automation with Playwright for Claude Code - improved from external skill with production patterns",
+  "main": "run.js",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "install-all-browsers": "npx playwright install"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "browser-testing",
+    "web-automation",
+    "claude-skill",
+    "general-purpose"
+  ],
+  "author": "vibe-code-bot",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.48.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
