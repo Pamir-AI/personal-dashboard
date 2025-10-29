@@ -9,21 +9,39 @@ Think of this as your personal command center - a single page that shows you:
 - Fashion drops from Hypebeast
 - **...or whatever YOU want to track!**
 
-## 🚀 Let's Get Started!
+---
 
-I'll guide you through three simple questions to customize your dashboard. After that, I'll set everything up for you automatically.
+## 🚀 Let's Build Your Dashboard!
 
-**Ready? Just say:**
+I'll ask you **3 simple questions** to customize your dashboard, then I'll build it automatically (~10 minutes).
 
+### Ready to start?
+
+Just say:
 ```
-"I'm ready to customize my dashboard!"
+"Let's get started" or "Help me set up my dashboard"
 ```
 
-Or if you want to jump straight in:
+**Here's what I'll ask:**
+1. **What do you want to track?** - I'll suggest sources based on your interests (tech, finance, fashion, etc.)
+2. **What theme do you like?** - I'll show you 6 options (dark, light, colorful, minimal, etc.)
+3. **How often should it update?** - I'll recommend a schedule based on your sources
 
-```
-"Set up my dashboard with [topics] using [theme], updating [frequency]"
-```
+Then I build everything while you watch!
+
+---
+
+### Not Ready Yet? Ask Me Anything!
+
+Have questions before we start? Ask away:
+
+- "Can you scrape [specific website]?"
+- "What themes are available?"
+- "Can I track Reddit?"
+- "How does the auto-update work?"
+- "What if a scraper breaks?"
+
+When you're ready, just say **"Let's get started"** ✨
 
 ---
 
@@ -274,12 +292,49 @@ Behance trending, and Designer News. Orange theme, update every 3 hours."
 Once you tell me what you want, here's what I'll do:
 
 ### 1. Build Your Scrapers (2-5 minutes)
-I'll create custom Playwright scripts that:
-- Navigate to your chosen websites
-- Extract exactly the data you want
-- Handle pagination, popups, and dynamic content
-- Save clean JSON data
-- Include error handling
+
+**I'll choose the right scraping approach for each website:**
+
+#### 🎯 Decision Tree
+
+**Simple API/Fetch (Fastest, Most Reliable)**
+```
+Use when: Website has a public API or returns clean JSON/HTML
+Examples: Hacker News, GitHub API, arXiv RSS
+Benefits: Fast, lightweight, no browser needed
+Method: Direct HTTP requests with fetch/axios
+```
+✅ **Preferred method when available** - no overkill, just clean data extraction
+
+**Headless Browser - Stealth Mode (Advanced Anti-Detection)**
+```
+Use when: Website has moderate bot detection but loads content via JavaScript
+Examples: Product Hunt, Twitter aggregators, Reddit
+Benefits: Bypasses basic bot detection, handles dynamic content
+Method: playwright-extra + stealth plugin + smart utilities
+```
+✅ **Uses pre-installed web-automation skill** with anti-detection features:
+- `playwright-extra` with stealth plugin (masks automation fingerprints)
+- Human-like interactions (`humanType`, `humanClick`, `randomDelay`)
+- Cookie persistence (`saveCookies`/`loadCookies`) for session reuse
+- Cloudflare detection (`detectCloudflare`) with 90s auto-solve
+- Retry logic with exponential backoff
+- Smart timeouts based on traffic patterns
+
+**Visible Browser - Brute Force (Nuclear Option)**
+```
+Use when: Website has aggressive bot detection (Amazon, Cloudflare, etc.)
+Examples: Amazon, heavily protected e-commerce sites
+Benefits: Harder to detect (real browser behavior), manual CAPTCHA solving
+Method: headless: false + all stealth techniques + human intervention if needed
+```
+✅ **Last resort** - visible browser window, you can manually solve CAPTCHAs if needed
+
+**What gets built:**
+- Smart scrapers that auto-detect Cloudflare/bot challenges
+- Clean JSON data saved to `drops/[source].json`
+- Production-ready error handling and logging
+- Session persistence (faster subsequent runs)
 
 ### 2. Update Your Backend (1 minute)
 I'll modify the Flask API to:
@@ -308,7 +363,28 @@ I'll run a test to make sure:
 
 **Total time: ~10 minutes**
 
-Then you'll have a fully functional, customized dashboard!
+### 6. Here Are Your Links! 🎉
+
+When setup is complete, I'll give you:
+
+**Local Access (same device):**
+```
+http://localhost:5000
+```
+
+**Local Network Access (other devices on your WiFi):**
+```
+http://192.168.x.x:5000
+```
+(I'll detect your IP automatically)
+
+**Public HTTPS Access (anywhere on internet):**
+```
+https://{your-subdomain}.devices.pamir.ai/distiller/proxy/5000/
+```
+(Works through Distiller proxy - already configured!)
+
+You can bookmark any of these and access your dashboard from anywhere!
 
 ---
 
@@ -417,6 +493,184 @@ Think of me as your pair programmer for this project. Ask me anything:
 - ✅ "Add a section for [new content type]"
 
 Let's build something awesome together! 🚀
+
+---
+
+## 🔧 Technical Reference: Web Automation Skill
+
+### Overview
+
+This project includes a pre-installed **web-automation skill** at `.claude/skills/web-automation/` that provides production-ready browser automation utilities. When building scrapers, I'll automatically use these tools to ensure reliability and anti-detection.
+
+### Why This Skill Exists
+
+**Problem:** Basic Playwright scripts fail on modern websites due to:
+- Bot detection (Amazon, Cloudflare, etc.)
+- JavaScript-heavy pages that don't render immediately
+- Rate limiting and IP blocking
+- Cookie/session management complexity
+
+**Solution:** The web-automation skill provides battle-tested utilities from production bots.
+
+### When I Use Each Approach
+
+#### ✅ Simple Fetch/API (No Skill Needed)
+```javascript
+// Example: Hacker News API
+const response = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
+const data = await response.json();
+```
+**When:** Site has public API or returns static HTML/JSON
+**Speed:** ⚡ Instant (no browser startup)
+**Reliability:** ⭐⭐⭐⭐⭐ (no bot detection)
+
+#### ✅ Headless Browser + Stealth (Uses Skill)
+```javascript
+const { chromium } = require('playwright-extra');
+const stealth = require('puppeteer-extra-plugin-stealth')();
+const { humanType, detectCloudflare, saveCookies } = require('./.claude/skills/web-automation/lib/utils.js');
+
+chromium.use(stealth);
+const browser = await chromium.launch({ headless: true });
+
+// Smart Cloudflare detection
+await detectCloudflare(page, context, 'page load', {
+  maxWaitSeconds: 90,
+  cookiePath: 'session.json'
+});
+
+// Human-like typing
+await humanType(page, '#search', 'query', { delay: 50 });
+```
+**When:** Site has moderate bot detection (Product Hunt, Reddit aggregators)
+**Speed:** 🐢 ~5-10 seconds (browser startup + page load)
+**Reliability:** ⭐⭐⭐⭐ (bypasses most detection)
+
+#### ✅ Visible Browser + Manual Intervention (Nuclear Option)
+```javascript
+const browser = await chromium.launch({
+  headless: false,  // You can see the browser
+  args: ['--disable-blink-features=AutomationControlled']
+});
+
+// If CAPTCHA appears, you can solve it manually
+console.log('Waiting for manual CAPTCHA solve...');
+await page.waitForTimeout(30000);
+```
+**When:** Site has aggressive detection (Amazon, Cloudflare protected sites)
+**Speed:** 🐌 ~10-30 seconds (+ manual intervention time)
+**Reliability:** ⭐⭐⭐⭐⭐ (humans always win)
+
+### Available Utilities (from web-automation skill)
+
+```javascript
+const utils = require('./.claude/skills/web-automation/lib/utils.js');
+
+// Session persistence (avoid repeated logins)
+await utils.saveCookies(context, 'session.json');
+await utils.loadCookies(context, 'session.json');
+
+// Human-like interactions (avoid bot detection)
+await utils.humanType(page, '#input', 'text', { delay: 50 });
+await utils.humanClick(page, 'button');
+await utils.randomDelay(1000, 2500); // Random wait time
+
+// Smart Cloudflare handling
+await utils.detectCloudflare(page, context, 'location', {
+  maxWaitSeconds: 90,
+  pollIntervalSeconds: 10,
+  cookiePath: 'session.json'
+});
+
+// Retry logic with exponential backoff
+const result = await utils.retryWithBackoff(async () => {
+  await page.waitForSelector('.data', { timeout: 10000 });
+  return await page.textContent('.data');
+}, { maxRetries: 3 });
+
+// Safe interactions with auto-retry
+await utils.safeClick(page, 'button', { retries: 3, timeout: 10000 });
+await utils.captureScreenshot(page, 'debug.png');
+```
+
+### What Makes Scrapers "Production-Ready"
+
+When I build scrapers using the web-automation skill, they include:
+
+1. **Anti-Detection**
+   - `playwright-extra` with stealth plugin (masks automation fingerprints)
+   - Human-like typing/clicking with random delays
+   - Realistic user agents and viewport sizes
+
+2. **Error Handling**
+   - Automatic retries with exponential backoff
+   - Screenshots captured on failures
+   - Graceful degradation (partial data better than no data)
+
+3. **Performance**
+   - Cookie persistence (skip login flows on subsequent runs)
+   - Smart timeouts (longer during peak traffic hours)
+   - Parallel scraping where possible
+
+4. **Bot Protection**
+   - Cloudflare auto-detection with 90s polling
+   - Block tracking (logs consecutive/total blocks)
+   - Automatic session persistence after challenge clears
+
+5. **Observability**
+   - Detailed console logging with timestamps
+   - JSON output for easy debugging
+   - Error screenshots saved automatically
+
+### Example: How I Choose the Approach
+
+**User Request:** "Track Product Hunt, Amazon deals, and GitHub trending"
+
+**My Decision Process:**
+
+1. **GitHub Trending** → Simple Fetch/API
+   - GitHub has a trending page with clean HTML
+   - No bot detection
+   - Fast and reliable
+   - ✅ Use basic fetch or axios
+
+2. **Product Hunt** → Headless + Stealth
+   - JavaScript-heavy page
+   - Moderate bot detection
+   - Data loads dynamically
+   - ✅ Use playwright-extra + stealth + utilities
+
+3. **Amazon** → Visible Browser (if needed)
+   - Aggressive bot detection
+   - Cloudflare challenges common
+   - May require CAPTCHA solving
+   - ✅ Start with headless + stealth, fallback to headless: false if blocked
+
+### Files Structure
+
+```
+.claude/skills/web-automation/
+├── SKILL.md                    # Full documentation
+├── lib/
+│   └── utils.js                # Production utilities I'll use
+├── examples/
+│   ├── login-flow.js           # Session persistence example
+│   ├── cloudflare-handler.js   # Bot protection example
+│   └── data-extraction.js      # Scraping with retry logic
+└── node_modules/
+    ├── playwright-extra/       # Enhanced Playwright
+    └── puppeteer-extra-plugin-stealth/  # Stealth plugin
+```
+
+### Why You Don't Need to Worry
+
+When you ask me to scrape a website:
+1. I automatically check if `.claude/skills/web-automation/` exists
+2. I choose the right approach (fetch vs headless vs visible)
+3. I use the utilities to handle edge cases
+4. I test the scraper and show you the results
+
+You just tell me **what** to scrape, and I handle **how** to scrape it reliably.
 
 ---
 
