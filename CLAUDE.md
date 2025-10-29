@@ -49,16 +49,9 @@ When you're ready, just say **"Let's get started"** ✨
 
 This is the fun part! Tell me what interests you, and I'll create custom scrapers to fetch that data.
 
-### 🎯 Already Built-In (Ready to Use)
+**IMPORTANT:** I will ONLY build scrapers for sources you explicitly request. I will NOT assume you want any "built-in" sources unless you specifically ask for them.
 
-Your dashboard comes with these sources pre-installed:
-
-- **Hacker News** - Top tech stories and discussions
-- **GitHub Trending** - Hottest open source projects
-- **arXiv** - Latest computer science research papers
-- **Hypebeast** - Weekly fashion and streetwear drops
-
-### 💡 Popular Custom Ideas
+### 💡 Popular Ideas
 
 Not sure what to track? Here are ideas organized by interest:
 
@@ -291,6 +284,40 @@ Behance trending, and Designer News. Orange theme, update every 3 hours."
 
 Once you tell me what you want, here's what I'll do:
 
+### 0. Test Scrapeability FIRST (1-2 minutes) ⚠️
+
+**Before building anything, I'll validate that the website can actually be scraped:**
+
+```
+"Can you scrape Amazon?"
+→ I'll write a quick test script to see if data is accessible
+→ Show you a sample of the data I can extract
+→ Tell you the success rate and any challenges
+→ Then we decide together if it's worth building
+```
+
+**Why test first?**
+- Saves time (no point building infrastructure for broken scrapers)
+- Sets realistic expectations (some sites are impossible to scrape)
+- Lets you pivot to alternatives if needed (RSS feeds, APIs, aggregators)
+
+**What I test:**
+1. Can I access the page? (200 status vs 403 blocked)
+2. Does it require JavaScript rendering? (static HTML vs dynamic)
+3. Is there bot detection? (Cloudflare, CAPTCHAs, rate limits)
+4. Can I extract the data you want? (show you a sample)
+5. How reliable is it? (test 2-3 times to check consistency)
+
+**After testing, I'll tell you:**
+- ✅ **Green light** - "This will work great! Here's sample data..."
+- ⚠️ **Yellow light** - "This will work but expect 70-80% success rate due to [challenge]"
+- ❌ **Red light** - "This is blocked/impossible, here are alternatives..."
+
+**Then you decide:**
+- Proceed with building the scraper
+- Use an alternative source I suggest
+- Combine multiple approaches (primary + backup)
+
 ### 1. Build Your Scrapers (2-5 minutes)
 
 **I'll choose the right scraping approach for each website:**
@@ -335,6 +362,56 @@ Method: headless: false + all stealth techniques + human intervention if needed
 - Clean JSON data saved to `drops/[source].json`
 - Production-ready error handling and logging
 - Session persistence (faster subsequent runs)
+
+**🖼️ IMPORTANT: Image Extraction**
+
+When building scrapers, ALWAYS look for and extract image URLs when available:
+
+**For RSS/Atom feeds:**
+- Check `<content:encoded>` field for `<img>` tags
+- Check `<media:content>` or `<enclosure>` tags
+- Example: Slickdeals RSS has images in `content:encoded`
+
+**For API responses:**
+- Look for `image`, `thumbnail`, `picture`, `photo` fields
+- Check nested objects (e.g., `product.image.url`)
+
+**For HTML scraping:**
+- Extract `og:image` meta tags
+- Find product images in data attributes or JSON-LD
+- Grab thumbnail URLs from CSS backgrounds
+
+**Why images matter:**
+- Users love visual previews (hover to see product images)
+- Makes the dashboard more engaging and useful
+- Helps users quickly identify items of interest
+
+**How to add hover preview:**
+1. Add `image` field to scraped data
+2. In frontend render, add `data-image="${image}"` attribute to title links
+3. Call `addImageHoverListeners()` after rendering
+4. CSS and JS for tooltip are already built-in!
+
+**Example scraper code:**
+```javascript
+// Extract image from content:encoded
+let imageUrl = null;
+if (contentMatch) {
+  const content = contentMatch[1];
+  const imgMatch = content.match(/<img[^>]+src="([^"]+)"/);
+  if (imgMatch) {
+    imageUrl = imgMatch[1].replace(/&amp;/g, '&');
+  }
+}
+
+return {
+  title,
+  link,
+  description,
+  image: imageUrl,  // ← Always include this!
+  // ... other fields
+};
+```
 
 ### 2. Update Your Backend (1 minute)
 I'll modify the Flask API to:
@@ -384,7 +461,23 @@ https://{your-subdomain}.devices.pamir.ai/distiller/proxy/5000/
 ```
 (Works through Distiller proxy - already configured!)
 
-You can bookmark any of these and access your dashboard from anywhere!
+**🔍 How to Find Your Subdomain:**
+
+To find your public URL subdomain, I will check the frpc configuration:
+```bash
+cat ~/.frpc/frpc.toml | grep subdomain
+```
+
+Look for the line: `subdomain = "your-name"`
+
+Your public URL will be: `https://your-name.devices.pamir.ai/distiller/proxy/5000/`
+
+**Example:** If `subdomain = "naruto"`, your URL is:
+```
+https://naruto.devices.pamir.ai/distiller/proxy/5000/
+```
+
+You can bookmark any of these URLs and access your dashboard from anywhere!
 
 ---
 

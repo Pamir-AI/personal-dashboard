@@ -1,0 +1,456 @@
+{
+  "lastUpdated": "2025-10-29T02:31:59.473Z",
+  "count": 50,
+  "products": [
+    {
+      "id": "1031174",
+      "title": "Dynal.AI",
+      "link": "https://www.producthunt.com/products/dynal-ai-2",
+      "publishedDate": "2025-10-26T17:02:35.000Z",
+      "description": "Your LinkedIn post studio from sources to impact",
+      "author": "Zac Zuo",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031651",
+      "title": "Grokipedia",
+      "link": "https://www.producthunt.com/products/grokipedia",
+      "publishedDate": "2025-10-28T03:14:12.000Z",
+      "description": "Elon's answer to Wikipedia",
+      "author": "Zac Zuo",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028453",
+      "title": "Aurely",
+      "link": "https://www.producthunt.com/products/auraly",
+      "publishedDate": "2025-10-19T14:19:18.000Z",
+      "description": "Private voice reminders for Mac with no cloud or accounts",
+      "author": "Levan Karamanishvili",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031621",
+      "title": "Conduit",
+      "link": "https://www.producthunt.com/products/conduit-7",
+      "publishedDate": "2025-10-27T23:38:54.000Z",
+      "description": "Organize & edit local files with AI from your browser",
+      "author": "Amrit Baveja",
+      "source": "producthunt"
+    },
+    {
+      "id": "1023358",
+      "title": "Fibre AI",
+      "link": "https://www.producthunt.com/products/fibre",
+      "publishedDate": "2025-10-06T00:24:58.000Z",
+      "description": "Secure file uploads for Intercom, Crisp & Zendesk",
+      "author": "Paul Waweru",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031422",
+      "title": "MailerLite email marketing MCP server",
+      "link": "https://www.producthunt.com/products/mailerlite",
+      "publishedDate": "2025-10-27T11:36:07.000Z",
+      "description": "Turn your AI tool into a personal email marketing assistant",
+      "author": "Indre Sizovaite",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028040",
+      "title": "Trace-AI",
+      "link": "https://www.producthunt.com/products/trace-ai-2",
+      "publishedDate": "2025-10-18T09:55:33.000Z",
+      "description": "Know What You Ship. Secure What You Depend On.",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031702",
+      "title": "Fitbit Enterprise",
+      "link": "https://www.producthunt.com/products/fitbit-enterprise",
+      "publishedDate": "2025-10-28T06:26:00.000Z",
+      "description": "Personal health coach built with Gemini",
+      "author": "Arjav Parikh",
+      "source": "producthunt"
+    },
+    {
+      "id": "1029782",
+      "title": "Pokee AI",
+      "link": "https://www.producthunt.com/products/pokee-2",
+      "publishedDate": "2025-10-22T22:15:56.000Z",
+      "description": "Vibe Your Agentic Workflows",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031710",
+      "title": "Pinch to Build by Vibecode App",
+      "link": "https://www.producthunt.com/products/vibecode-app",
+      "publishedDate": "2025-10-28T06:58:55.000Z",
+      "description": "The most powerful way to build professional mobile apps.",
+      "author": "Alexis Ohanian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027567",
+      "title": "chaos",
+      "link": "https://www.producthunt.com/products/chaos-3",
+      "publishedDate": "2025-10-16T20:46:55.000Z",
+      "description": "The workspace for music creators",
+      "author": "Ruhan Verma",
+      "source": "producthunt"
+    },
+    {
+      "id": "1029353",
+      "title": "LLM Stats",
+      "link": "https://www.producthunt.com/products/llm-stats",
+      "publishedDate": "2025-10-21T18:28:12.000Z",
+      "description": "Compare API models by benchmarks, cost & capabilities",
+      "author": "Rajiv Ayyangar",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030486",
+      "title": "Velona AI",
+      "link": "https://www.producthunt.com/products/velona-ai",
+      "publishedDate": "2025-10-24T17:05:53.000Z",
+      "description": "AI that finds hidden fleet costs before they hit your P&L",
+      "author": "Ray Hernandez",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030192",
+      "title": "Presentation 2.0 by CubeOne",
+      "link": "https://www.producthunt.com/products/cubeone",
+      "publishedDate": "2025-10-23T22:49:11.000Z",
+      "description": "Never make slides again",
+      "author": "Eric Quan",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031159",
+      "title": "Starbase",
+      "link": "https://www.producthunt.com/products/metorial",
+      "publishedDate": "2025-10-26T16:15:43.000Z",
+      "description": "Browser-based MCP server testing with AI chat integration",
+      "author": "Tobias Herber",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030172",
+      "title": "AI CMO by Lindy",
+      "link": "https://www.producthunt.com/products/lindy",
+      "publishedDate": "2025-10-23T21:14:24.000Z",
+      "description": "Launch 1000s of marketing experiments in minutes",
+      "author": "KP",
+      "source": "producthunt"
+    },
+    {
+      "id": "1024144",
+      "title": "Alai",
+      "link": "https://www.producthunt.com/products/alai",
+      "publishedDate": "2025-10-07T23:41:03.000Z",
+      "description": "Create high quality presentations using AI",
+      "author": "Garry Tan",
+      "source": "producthunt"
+    },
+    {
+      "id": "1031285",
+      "title": "Mico",
+      "link": "https://www.producthunt.com/products/the-new-microsoft-copilot",
+      "publishedDate": "2025-10-27T03:17:37.000Z",
+      "description": "A vibrant new way to talk with Copilot",
+      "author": "Zac Zuo",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030536",
+      "title": "v0 for iOS",
+      "link": "https://www.producthunt.com/products/v0",
+      "publishedDate": "2025-10-24T21:47:25.000Z",
+      "description": "Build anything with AI",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028895",
+      "title": "Phare Incident AI",
+      "link": "https://www.producthunt.com/products/phare",
+      "publishedDate": "2025-10-20T19:39:21.000Z",
+      "description": "Smart incident summaries powered by Magistral small",
+      "author": "Nicolas Beauvais",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030422",
+      "title": "SuperIntern v0.3",
+      "link": "https://www.producthunt.com/products/superintern",
+      "publishedDate": "2025-10-24T14:39:29.000Z",
+      "description": "Always-On Meeting AI: Live Notes, Instant Answers",
+      "author": "Etaro Ito",
+      "source": "producthunt"
+    },
+    {
+      "id": "1017786",
+      "title": "CalPulse",
+      "link": "https://www.producthunt.com/products/calpulse",
+      "publishedDate": "2025-09-19T04:06:32.000Z",
+      "description": "Snap the Menu. Get Instant Calories & Macros",
+      "author": "Kevin William David",
+      "source": "producthunt"
+    },
+    {
+      "id": "1017267",
+      "title": "PawChamp",
+      "link": "https://www.producthunt.com/products/pawchamp-puppy-dog-training",
+      "publishedDate": "2025-09-17T15:18:49.000Z",
+      "description": "Dog Training and Care App: AI Companion and 24/7 Dog Experts",
+      "author": "Mark Opanasiuk",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030090",
+      "title": "Neatify",
+      "link": "https://www.producthunt.com/products/neatify",
+      "publishedDate": "2025-10-23T15:52:21.000Z",
+      "description": "Make your Mac organized, effortlessly",
+      "author": "Nicolò",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027442",
+      "title": "Dictly",
+      "link": "https://www.producthunt.com/products/dictly",
+      "publishedDate": "2025-10-16T13:16:00.000Z",
+      "description": "Private, on-device dictation — fast, styled and 100% offline",
+      "author": "Jannik Jung",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030547",
+      "title": "Chirpz",
+      "link": "https://www.producthunt.com/products/chirpz",
+      "publishedDate": "2025-10-24T23:07:12.000Z",
+      "description": "Uncover unknown citations with AI",
+      "author": "Sina Tayebati",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030530",
+      "title": "Kodus",
+      "link": "https://www.producthunt.com/products/kodus",
+      "publishedDate": "2025-10-24T20:51:00.000Z",
+      "description": "Open-source AI Code Review that won’t let you break prod",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1029699",
+      "title": "Foundation: Galactic Frontier",
+      "link": "https://www.producthunt.com/products/foundation-galactic-frontier",
+      "publishedDate": "2025-10-22T17:12:24.000Z",
+      "description": "Adventure into Issac Asimov's epic sci-fi universe",
+      "author": "Chris Messina",
+      "source": "producthunt"
+    },
+    {
+      "id": "1008323",
+      "title": "Draft'n Run",
+      "link": "https://www.producthunt.com/products/draft-n-run",
+      "publishedDate": "2025-08-22T13:22:16.000Z",
+      "description": "No-code studio for custom AI building and running",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028635",
+      "title": "Sort Feed",
+      "link": "https://www.producthunt.com/products/sort-feed-instagram-analytics-tool",
+      "publishedDate": "2025-10-20T06:38:43.000Z",
+      "description": "Sort, analyze, and download Instagram content instantly",
+      "author": "Akash Sahani",
+      "source": "producthunt"
+    },
+    {
+      "id": "1026960",
+      "title": "Amigo AI",
+      "link": "https://www.producthunt.com/products/amigo-ai-going-deeper-in-transactions",
+      "publishedDate": "2025-10-15T11:44:15.000Z",
+      "description": "AI-powered personal finance agent",
+      "author": "Tirupati Balan",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030320",
+      "title": "Friday",
+      "link": "https://www.producthunt.com/products/friday-8",
+      "publishedDate": "2025-10-24T08:56:07.000Z",
+      "description": "AI that calls you for self-reflection",
+      "author": "Minjae So",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030061",
+      "title": "Updog by Datadog",
+      "link": "https://www.producthunt.com/products/updog-by-datadog",
+      "publishedDate": "2025-10-23T14:32:18.000Z",
+      "description": "Don't Wait for Status Page Updates",
+      "author": "Arjav Parikh",
+      "source": "producthunt"
+    },
+    {
+      "id": "1029816",
+      "title": "TheBoringNotch",
+      "link": "https://www.producthunt.com/products/theboringnotch",
+      "publishedDate": "2025-10-23T00:19:43.000Z",
+      "description": "Open source Dynamic Island for your Mac's Notch",
+      "author": "Gabe Perez",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028407",
+      "title": "Picser",
+      "link": "https://www.producthunt.com/products/picser-2",
+      "publishedDate": "2025-10-19T11:03:06.000Z",
+      "description": "A native, powerful, elegant image viewer designed for macOS.",
+      "author": "Eric Cai",
+      "source": "producthunt"
+    },
+    {
+      "id": "1026311",
+      "title": "Drynosaur",
+      "link": "https://www.producthunt.com/products/drynosaur",
+      "publishedDate": "2025-10-13T21:21:11.000Z",
+      "description": "Make hangovers go extinct, one day at a time",
+      "author": "Gareth Harte",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030331",
+      "title": "Keepsake",
+      "link": "https://www.producthunt.com/products/keepsake-3",
+      "publishedDate": "2025-10-24T09:17:23.000Z",
+      "description": "Collaboratively write and print stories",
+      "author": "Sasha Hickson",
+      "source": "producthunt"
+    },
+    {
+      "id": "1026901",
+      "title": "Flipt v2",
+      "link": "https://www.producthunt.com/products/flipt-cloud",
+      "publishedDate": "2025-10-15T09:14:48.000Z",
+      "description": "Feature flags for safe deployments, git-native & self-hosted",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030389",
+      "title": "AI Cleaner by Lilucat",
+      "link": "https://www.producthunt.com/products/ai-cleaner-by-lilucat",
+      "publishedDate": "2025-10-24T12:26:39.000Z",
+      "description": "Free up space instantly with AI. Simple, fast, and private.",
+      "author": "Kevin Archer",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027877",
+      "title": "PokeScope",
+      "link": "https://www.producthunt.com/products/pokescope",
+      "publishedDate": "2025-10-17T20:13:39.000Z",
+      "description": "Pokemon card price checker & recent eBay sales",
+      "author": "Greg Ellis",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028413",
+      "title": "DeepShare",
+      "link": "https://www.producthunt.com/products/deepshare-2",
+      "publishedDate": "2025-10-19T11:36:56.000Z",
+      "description": "AI Chats to Word Documents",
+      "author": "Yorick",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028518",
+      "title": "Slowed Enchanced",
+      "link": "https://www.producthunt.com/products/slowed-enchanced",
+      "publishedDate": "2025-10-19T18:48:05.000Z",
+      "description": "Stupid Simple Audio Controls",
+      "author": "Shaaf Yousaf",
+      "source": "producthunt"
+    },
+    {
+      "id": "1028078",
+      "title": "uLuup",
+      "link": "https://www.producthunt.com/products/uluup",
+      "publishedDate": "2025-10-18T12:04:32.000Z",
+      "description": "Mindful habits building for imperfect progress",
+      "author": "Nazlican",
+      "source": "producthunt"
+    },
+    {
+      "id": "1026757",
+      "title": "Send/Share Files by Couchdrop",
+      "link": "https://www.producthunt.com/products/couchdrop",
+      "publishedDate": "2025-10-15T01:38:26.000Z",
+      "description": "Send encrypted file links instead of email attachments",
+      "author": "Tom Sutton",
+      "source": "producthunt"
+    },
+    {
+      "id": "1029484",
+      "title": "Flowdrop",
+      "link": "https://www.producthunt.com/products/flowdrop",
+      "publishedDate": "2025-10-22T07:08:45.000Z",
+      "description": "Cursor for workflows, automate anything with chat",
+      "author": "Webb Hammond",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027593",
+      "title": "Reflex",
+      "link": "https://www.producthunt.com/products/reflex-5",
+      "publishedDate": "2025-10-17T00:35:10.000Z",
+      "description": "Prompt to production app, in Pure Python",
+      "author": "Garry Tan",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030212",
+      "title": "Google Skills",
+      "link": "https://www.producthunt.com/products/google",
+      "publishedDate": "2025-10-24T01:53:45.000Z",
+      "description": "Build AI skills for tomorrow, today",
+      "author": "Zac Zuo",
+      "source": "producthunt"
+    },
+    {
+      "id": "1030200",
+      "title": "Voicetypr",
+      "link": "https://www.producthunt.com/products/voicetypr",
+      "publishedDate": "2025-10-24T00:38:12.000Z",
+      "description": "Speech to text for writing thoughts faster & privately",
+      "author": "Moinul Moin",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027404",
+      "title": "Next.js 16",
+      "link": "https://www.producthunt.com/products/nextjs",
+      "publishedDate": "2025-10-16T11:38:43.000Z",
+      "description": "The React Framework for the Web",
+      "author": "fmerian",
+      "source": "producthunt"
+    },
+    {
+      "id": "1027459",
+      "title": "Peek-a-Doodle for iOS &amp; iPadOS",
+      "link": "https://www.producthunt.com/products/peek-a-doodle-for-ios-ipados",
+      "publishedDate": "2025-10-16T13:53:50.000Z",
+      "description": "Send doodles that pop up on your friends’ home screen",
+      "author": "Frederik Jacques",
+      "source": "producthunt"
+    }
+  ]
+}

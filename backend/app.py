@@ -63,11 +63,11 @@ class DistillerProxyFix:
 app.wsgi_app = DistillerProxyFix(app.wsgi_app)  # type: ignore[assignment]
 
 # Paths
-DROPS_OUTPUT_DIR = Path(__file__).parent.parent / 'drops-output'
+DROPS_DIR = Path(__file__).parent.parent / 'drops'
 SCRAPERS_DIR = Path(__file__).parent.parent / 'scrapers'
 
 # Ensure output directory exists
-DROPS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+DROPS_DIR.mkdir(parents=True, exist_ok=True)
 
 # API Endpoints (MUST come BEFORE catch-all routes)
 
@@ -80,50 +80,32 @@ def health():
 def get_drops():
     """Get cached data from all sources"""
     try:
-        # Read Hypebeast data
-        hypebeast_file = DROPS_OUTPUT_DIR / 'hypebeast-drops.json'
-        hypebeast_data = {}
-        if hypebeast_file.exists():
-            with open(hypebeast_file, 'r') as f:
-                hypebeast_data = json.load(f)
+        # Read Slickdeals data
+        slickdeals_file = DROPS_DIR / 'slickdeals.json'
+        slickdeals_data = {}
+        if slickdeals_file.exists():
+            with open(slickdeals_file, 'r') as f:
+                slickdeals_data = json.load(f)
 
-        # Read Hacker News data
-        hackernews_file = DROPS_OUTPUT_DIR / 'hackernews.json'
-        hackernews_data = {}
-        if hackernews_file.exists():
-            with open(hackernews_file, 'r') as f:
-                hackernews_data = json.load(f)
-
-        # Read GitHub trending data
-        github_file = DROPS_OUTPUT_DIR / 'github-trending.json'
-        github_data = {}
-        if github_file.exists():
-            with open(github_file, 'r') as f:
-                github_data = json.load(f)
-
-        # Read arXiv data
-        arxiv_file = DROPS_OUTPUT_DIR / 'arxiv.json'
-        arxiv_data = {}
-        if arxiv_file.exists():
-            with open(arxiv_file, 'r') as f:
-                arxiv_data = json.load(f)
+        # Read Product Hunt data
+        producthunt_file = DROPS_DIR / 'producthunt.json'
+        producthunt_data = {}
+        if producthunt_file.exists():
+            with open(producthunt_file, 'r') as f:
+                producthunt_data = json.load(f)
 
         # Get most recent timestamp
         timestamps = [
-            hypebeast_data.get('timestamp'),
-            hackernews_data.get('timestamp'),
-            github_data.get('timestamp'),
-            arxiv_data.get('timestamp')
+            slickdeals_data.get('lastUpdated'),
+            producthunt_data.get('lastUpdated')
         ]
         timestamps = [t for t in timestamps if t]
         last_updated = timestamps[0] if timestamps else None
 
         return jsonify({
             'success': True,
-            'hypebeast': hypebeast_data,
-            'hackernews': hackernews_data,
-            'github': github_data,
-            'arxiv': arxiv_data,
+            'slickdeals': slickdeals_data,
+            'producthunt': producthunt_data,
             'last_updated': last_updated
         })
 
@@ -139,10 +121,8 @@ def run_scrapers_background():
 
     # Define all scrapers
     scrapers = {
-        'hypebeast': 'hypebeast-scraper.js',
-        'hackernews': 'hackernews-scraper.js',
-        'github': 'github-trending-scraper.js',
-        'arxiv': 'arxiv-scraper.js'
+        'slickdeals': 'slickdeals.js',
+        'producthunt': 'producthunt.js'
     }
 
     # Run each scraper
@@ -209,7 +189,7 @@ def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
 if __name__ == '__main__':
-    print(f"📁 Drops output directory: {DROPS_OUTPUT_DIR}")
+    print(f"📁 Drops output directory: {DROPS_DIR}")
     print(f"🎭 Scrapers directory: {SCRAPERS_DIR}")
     print(f"🚀 Starting Flask server on http://localhost:5000")
     app.run(debug=True, host='0.0.0.0', port=5000)
