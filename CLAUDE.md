@@ -465,7 +465,7 @@ https://{your-subdomain}.devices.pamir.ai/distiller/proxy/5000/
 
 To find your public URL subdomain, I will check the frpc configuration:
 ```bash
-cat ~/.frpc/frpc.toml | grep subdomain
+cat /etc/frp/frpc.toml | grep subdomain
 ```
 
 Look for the line: `subdomain = "your-name"`

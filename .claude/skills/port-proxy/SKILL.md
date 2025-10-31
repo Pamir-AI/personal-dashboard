@@ -43,9 +43,9 @@ https://{subdomain}.devices.pamir.ai/distiller/proxy/{PORT}/
 
 **🔍 Find your subdomain:** Check frpc config
 ```bash
-cat ~/.frpc/frpc.toml | grep subdomain
-# Example output: subdomain = "naruto"
-# Your URL: https://naruto.devices.pamir.ai/distiller/proxy/5000/
+cat /etc/frp/frpc.toml | grep subdomain
+# Example output: subdomain = "test"
+# Your URL: https://test.devices.pamir.ai/distiller/proxy/5000/
 ```
 
 **Step 3: Fix path issues if needed**
