@@ -91,7 +91,7 @@ else
         echo ""
         echo "Next steps:"
         echo "  1. Test locally: http://localhost:{PORT}/"
-        echo "  2. Test via proxy: https://{subdomain}.devices.pamir.ai/vscode/proxy/{PORT}/"
+        echo "  2. Test via proxy: https://{subdomain}.devices.pamir.ai/distiller/proxy/{PORT}/"
         echo "  3. Hard refresh browser (Ctrl+Shift+R)"
     fi
 fi
